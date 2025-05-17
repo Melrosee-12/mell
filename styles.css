@@ -1,0 +1,12 @@
+p{
+    font-size: 20px;
+    color: #000;
+    opacity: 0.5px;
+}
+
+div{
+    width: 200px;
+    height: 300px;
+    border:1px black solid;
+    background:linear-gradient(90deg,#ff0000, #0000ff);
+}
