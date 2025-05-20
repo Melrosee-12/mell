@@ -1,12 +1,46 @@
-p{
-    font-size: 20px;
-    color: #000;
-    opacity: 0.5px;
+/* Сброс стандартных отступов */
+nav, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-div{
-    width: 200px;
-    height: 300px;
-    border:1px black solid;
-    background:linear-gradient(90deg,#ff0000, #0000ff);
+/* Основное меню */
+nav ul {
+    display: flex;          /* Горизонтальное меню */
+    background: #007BFF;
+}
+
+nav ul li {
+    list-style-type: none;
+    position: relative;    /* Для позиционирования подменю */
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Подменю */
+nav ul ul.submenu {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    top: 100%;             /* Показывается под пунктом меню */
+    left: 0;
+    background: #f8f9fa;
+    min-width: 200px;      /* Фиксированная ширина */
+    z-index: 1000;         /* Чтобы перекрывать другие элементы */
+}
+
+nav ul ul.submenu li a {
+    color: #333;
+    padding: 10px 15px;
+}
+
+/* Показываем подменю при наличии класса .active */
+nav ul li.active > ul.submenu {
+    display: block;
 }
